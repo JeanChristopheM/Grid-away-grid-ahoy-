@@ -1,0 +1,30 @@
+:root {
+    font-size:14px;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2rem;
+    padding:2rem;
+
+    background-color: lightsteelblue;
+}
+article {
+    text-align: center;
+    background-color: white;
+    border-radius: .3rem;
+    padding:2rem;
+}
+    article img {
+        width:100px;
+        height:100px;
+        display: block;
+        margin: 0 auto;
+    }
