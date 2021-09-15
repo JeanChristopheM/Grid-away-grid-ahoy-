@@ -19,6 +19,9 @@ body {
     font-family: 'Open Sans', sans-serif;
     color:hsla(125, 0%, 40%, 1);
 }
+body>input {
+    position:absolute;
+}
 main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -28,64 +31,125 @@ main {
     
     background-color: hsla(164, 100%, 95%, 1);
 }
-article {
-    background-color: white;
-    border-radius: .3rem;
-    padding:2rem;
-    display:grid;
+    article {
+        background-color: white;
+        border-radius: .3rem;
+        padding:2rem;
+        display:grid;
+        text-align: center;
+        box-shadow: 0px 0px 10px 5px hsla(125, 0%, 0%, .3);
+        transform: scale(1);
+        transition: all .2s;
+    }
+        article:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 10px 0px hsla(125, 0%, 0%, 1);
+        }
+            article>* {
+                padding:1rem 0;
+            }
+            article img {
+                width:100px;
+                height:100px;
+                display: block;
+                margin: 0 auto;
+            }
+            article h2 {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color:hsla(125, 0%, 30%, 1);
+            }
+            article p {
+                line-height: 1.5rem;
+            }
+            article div {
+                position:relative;
+            }
+            article div::after {
+                content:'';
+                width:30%;
+                height:2px;
+                position:absolute;
+                top:calc(50% - 1px);
+                left:calc(50% - 15%);
+                border-top: 1px solid hsl(0, 0%, 75%);
+            }
+            article a, article a:visited {
+                text-decoration: none;
+                display:inline-block;
+                color:inherit;
+                font-weight: 600;
+                transform: scale(1);
+                transition: all .2s;
+                background-color: white;
+                border-radius: 50%;
+                margin:0 auto;
+                padding:1rem;
+            }
+                article a:hover {
+                    transform: scale(1.05);
+                    background-color: lightseagreen;
+                    border-radius: 2rem;
+                    color:white;
+                }
+header {
+    background-color: lightseagreen;
+    padding: 1rem;
     text-align: center;
-    box-shadow: 0px 0px 10px 5px hsla(125, 0%, 0%, .3);
-    transform: scale(1);
-    transition: all .2s;
 }
-article:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 0px 10px 0px hsla(125, 0%, 0%, 1);
-}
-    article>* {
-        padding:1rem 0;
-    }
-    article img {
-        width:100px;
-        height:100px;
-        display: block;
-        margin: 0 auto;
-    }
-    article h2 {
+    header h1 {
         font-size: 1.2rem;
         font-weight: 600;
         color:hsla(125, 0%, 30%, 1);
     }
-    article p {
-        line-height: 1.5rem;
-    }
-    article div {
-        position:relative;
-    }
-    article div::after {
-        content:'';
-        width:30%;
-        height:2px;
+    nav {
         position:absolute;
-        top:calc(50% - 1px);
-        left:calc(50% - 15%);
-        border-top: 1px solid hsl(0, 0%, 75%);
+        top:1rem;
+        left:1rem;
+        z-index:1;
+        user-select: none;
+        text-align:initial;
+        color:white;
     }
-    article a, article a:visited {
-        text-decoration: none;
-        display:inline-block;
-        color:inherit;
-        font-weight: 600;
-        transform: scale(1);
-        transition: all .2s;
-        background-color: white;
-        border-radius: 50%;
-        margin:0 auto;
-        padding:1rem;
-    }
-        article a:hover {
-            transform: scale(1.05);
-            background-color: lightseagreen;
-            border-radius: 2rem;
-            color:white;
+        nav label:hover {
+            cursor: pointer;
         }
+        nav ul {
+            padding:1rem;
+        }
+            nav ul li {
+                padding:1rem;
+            }
+        nav a, nav a:visited {
+            text-decoration: none;
+            color:inherit;
+        }
+            nav a:hover, nav a:active {
+                text-decoration: underline;
+            }
+
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.menu {
+    position:absolute;
+    opacity: 0;
+    transform: scaleX(0) translateX(-1rem) translateY(.5rem);
+    transition: all .5s;
+    background-color: lightseagreen;
+    border-bottom-right-radius: 1rem;
+}
+.container input:checked ~ .menu {
+    width:unset;
+    height:unset;
+    pointer-events: initial;
+    opacity: 1;
+    transform: scaleX(1) translateX(-1rem) translateY(.5rem);
+    
+}

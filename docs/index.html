@@ -12,7 +12,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <nav></nav>
+    <header>
+        <h1>Welcome</h1>
+        <nav>
+            <label class="container">MENU
+                <input type="checkbox" name="check" id="menuCheck">
+                <ul class="menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Infos</a></li>
+                </ul>
+            </label>
+        </nav>
+    </header>
     <main>
         <article>
             <img src="./img/icon1.svg" alt="Icon1">
@@ -71,5 +83,9 @@
             <a href="#">LEARN MORE</a>
         </article>
     </main>
+    <script>
+        let check = document.querySelector('#menuCheck');
+        check.checked = false;
+    </script>
 </body>
 </html>
