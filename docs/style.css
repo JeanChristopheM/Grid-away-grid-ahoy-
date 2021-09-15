@@ -60,15 +60,19 @@ article:hover {
     }
     article a, article a:visited {
         text-decoration: none;
+        display:inline-block;
         color:inherit;
         font-weight: 600;
         transform: scale(1);
-        transition: transform .2s;
+        transition: all .2s;
+        background-color: white;
+        border-radius: 1rem;
+        margin:0 auto;
+        padding:1rem;
     }
         article a:hover {
             transform: scale(1.05);
             background-color: lightseagreen;
-            border-radius: 50%;
-            display:block;
+            border-radius: 1rem;
             color:white;
         }
