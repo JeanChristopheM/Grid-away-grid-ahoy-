@@ -18,6 +18,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     color:hsla(125, 0%, 40%, 1);
+    background-color: hsla(164, 100%, 95%, 1);
 }
 body>input {
     position:absolute;
@@ -28,8 +29,8 @@ main {
     grid-auto-rows: min-content;
     grid-gap: 2rem;
     padding:2rem;
-    
-    background-color: hsla(164, 100%, 95%, 1);
+    max-width: 1500px;
+    margin:0 auto;
 }
     article {
         background-color: white;
@@ -126,7 +127,12 @@ header {
         }
             nav ul li {
                 padding:1rem;
+                transform: scale(1);
+                transition: all .2s;
             }
+                nav ul li:hover {
+                    transform: scale(1.1);
+                }
         nav a, nav a:visited {
             text-decoration: none;
             color:inherit;
