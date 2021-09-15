@@ -104,7 +104,7 @@ header {
     }
     nav {
         position:absolute;
-        top:1rem;
+        top:.8em;
         left:1rem;
         z-index:1;
         user-select: none;
