@@ -40,7 +40,7 @@ main {
         text-align: center;
         box-shadow: 0px 0px 10px 5px hsla(125, 0%, 0%, .3);
         transform: scale(1);
-        transition: all .2s;
+        transition: all .2s ease-in-out;
     }
         article:hover {
             transform: scale(1.05);
@@ -81,14 +81,14 @@ main {
                 color:inherit;
                 font-weight: 600;
                 transform: scale(1);
-                transition: all .2s;
+                transition: all .2s ease-in-out;
                 background-color: white;
                 border-radius: 50%;
                 margin:0 auto;
                 padding:1rem;
             }
                 article a:hover {
-                    transform: scale(1.05);
+                    transform: scale(1.2);
                     background-color: lightseagreen;
                     border-radius: 2rem;
                     color:white;
@@ -128,7 +128,7 @@ header {
             nav ul li {
                 padding:1rem;
                 transform: scale(1);
-                transition: all .2s;
+                transition: all .2s linear;
             }
                 nav ul li:hover {
                     transform: scale(1.1);
